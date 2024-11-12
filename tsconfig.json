@@ -1,7 +1,12 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "jsx": "react-jsx", // JSX를 React로 변환할 때의 구문을 설정합니다. (React 17 이상에서는 `react-jsx`를 사용)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
 }
