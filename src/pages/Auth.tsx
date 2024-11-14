@@ -13,7 +13,7 @@ export default function AuthPage() {
   return (
     <div>
       <button onClick={toggle}>{isToggle ? 'SignUp' : 'Login'}</button>
-      {isToggle ? <SignUp /> : <Login />}
+      {isToggle ? <Login /> : <SignUp />}
     </div>
   );
 }
