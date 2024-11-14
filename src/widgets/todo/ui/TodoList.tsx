@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 
-import { Todo, TodoArray } from '@/entities/todo.model';
+import { Todo, TodoArray } from '@/entities/todo/model';
 
 export default function TodoList() {
   const [, setSearchParams] = useSearchParams();
