@@ -5,10 +5,10 @@ type BtnSize = 1 | 2 | 3;
 
 const BtnTheme = {
   color: {
-    blue: '#a6c8ff',
-    green: '#b6e849',
-    red: '#ff9aa2',
-    default: '#ffffff',
+    blue: '#a6c8ff70',
+    green: '#b6e84970',
+    red: '#ff9aa270',
+    default: '#CD8E7D25',
   },
   size: {
     1: css`
@@ -31,7 +31,7 @@ const BtnTheme = {
 
 const ButtonStyle = styled.button<{ color: BtnColor; size: BtnSize }>`
   border-radius: 0.5rem;
-  border: 1px solid #000;
+  border: 1px solid #cd8e90;
   font-weight: bold;
   background-color: ${({ color }) => BtnTheme.color[color]};
   ${({ size }) => BtnTheme.size[size]};
