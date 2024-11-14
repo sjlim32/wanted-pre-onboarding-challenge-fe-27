@@ -11,16 +11,16 @@ export const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: 'auth',
-    element: <AuthPage />,
-  },
-  {
-    path: 'todo',
+    path: '/',
     element: <Layout />,
     children: [
       {
-        index: true,
+        path: 'todo',
         element: <TodoPage />,
+      },
+      {
+        path: 'auth',
+        element: <AuthPage />,
       },
     ],
   },

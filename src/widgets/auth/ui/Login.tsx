@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { AuthFormInputs, authSchema } from '@/features/auth/model/validation';
+import { AuthFormInputs, authSchema } from '@/widgets/auth/model/validation';
 
 export default function Login() {
   const {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { Todo, TodoArray } from '@/entities/todo.model';
@@ -6,17 +5,12 @@ import { Todo, TodoArray } from '@/entities/todo.model';
 export default function TodoDetail() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const id = searchParams.get('id'); // 쿼리 문자열에서 id 값 가져오기
+  const id = searchParams.get('id');
 
-  const [todo, setTodo] = useState<Todo | undefined>(undefined);
-
-  useEffect(() => {
-    const foundTodo = TODO_MOCK_LIST.find((todo: Todo) => todo.id === id);
-    setTodo(foundTodo);
-  }, [id]);
+  const todo = TODO_MOCK_LIST.find((todo: Todo) => todo.id === id);
 
   if (!todo) {
-    return <p>Todo를 찾을 수 없습니다.</p>;
+    return <p>Todo를 선택해주세요</p>;
   }
 
   return (

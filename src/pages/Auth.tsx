@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Login from '@/features/auth/ui/Login';
-import SignUp from '@/features/auth/ui/SignUp';
+import Login from '@/widgets/auth/ui/Login';
+import SignUp from '@/widgets/auth/ui/SignUp';
 
 export default function AuthPage() {
   const [isToggle, setIsToggle] = useState(false);
