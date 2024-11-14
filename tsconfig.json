@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", // JSX를 React로 변환할 때의 구문을 설정합니다. (React 17 이상에서는 `react-jsx`를 사용)
+    "jsx": "react-jsx", // JSX를 React로 변환할 때의 구문을 설정 (React 17 이상에서는 `react-jsx`를 사용)
+    "esModuleInterop": true, // CommonJS 모듈을 ES 모듈처럼 가져올 수 있도록 해주는 설정
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
