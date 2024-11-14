@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+import LogIn from '@/features/login/ui/LogIn';
+import SignUp from '@/features/signup/ui/SignUp';
 import { Wrapper } from '@/shared/style';
-import LogIn from '@/widgets/auth/ui/LogIn';
-import SignUp from '@/widgets/auth/ui/SignUp';
 
 export default function AuthPage() {
   const [tab, setTab] = useState<'logIn' | 'signUp'>('logIn');

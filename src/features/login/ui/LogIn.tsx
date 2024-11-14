@@ -2,11 +2,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
+import { AuthForm, authSchema } from '@/features/auth/model/validation';
 import { Input } from '@/features/auth/ui/Input';
+import { useLogIn } from '@/features/login/api/login.api';
 import Button from '@/shared/ui/Button';
-import { AuthForm, authSchema } from '@/widgets/auth/model/validation';
 
 export default function LogIn() {
+  const { mutate: logIn } = useLogIn();
+
   const {
     register,
     handleSubmit,
@@ -16,7 +19,7 @@ export default function LogIn() {
   });
 
   const onSubmit = (data: AuthForm) => {
-    console.log(data);
+    logIn(data);
   };
 
   return (

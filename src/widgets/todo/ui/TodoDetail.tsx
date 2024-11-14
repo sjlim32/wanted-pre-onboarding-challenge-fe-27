@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { Todo, TodoArray } from '@/entities/todo/model';
+import { Todo, TodoArray } from '@/entities/todo/todo.model';
 
 export default function TodoDetail() {
   const location = useLocation();

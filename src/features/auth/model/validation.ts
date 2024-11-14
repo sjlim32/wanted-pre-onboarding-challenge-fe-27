@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { UserEntity } from '@/entities/user/model';
+import { UserEntity } from '@/entities/user/user.model';
 
 export const authSchema: z.Schema<UserEntity> = z.object({
   email: z.string().email('유효한 이메일 주소를 입력하세요.'),
