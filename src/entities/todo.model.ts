@@ -8,3 +8,5 @@ export interface Todo extends TodoEntity {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export type TodoArray = Todo[];
