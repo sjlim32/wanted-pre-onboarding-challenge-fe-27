@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
 import { AUTH_TAB } from '@/features/auth/model/auth.const';
-import { AuthForm, authSchema } from '@/features/auth/model/validation';
+import { AuthForm, authSchema } from '@/features/auth/model/validation.model';
 import { AuthInput } from '@/features/auth/ui/AuthInput';
 import { useSignUp } from '@/features/signup/api/signup.api';
 import Button from '@/shared/ui/Button';

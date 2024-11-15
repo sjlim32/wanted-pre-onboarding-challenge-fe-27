@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
-import { AuthForm, authSchema } from '@/features/auth/model/validation';
+import { AuthForm, authSchema } from '@/features/auth/model/validation.model';
 import { AuthInput } from '@/features/auth/ui/AuthInput';
 import { useLogIn } from '@/features/login/api/login.api';
 import Button from '@/shared/ui/Button';
