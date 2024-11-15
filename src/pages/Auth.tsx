@@ -1,25 +1,30 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+import { AUTH_TAB } from '@/features/auth/model/auth.const';
 import LogIn from '@/features/login/ui/LogIn';
 import SignUp from '@/features/signup/ui/SignUp';
 import { Wrapper } from '@/shared/style';
 
 export default function AuthPage() {
-  const [tab, setTab] = useState<'logIn' | 'signUp'>('logIn');
+  const [tab, setTab] = useState<AUTH_TAB>('logIn');
+
+  const toggleTab = (tab: AUTH_TAB) => {
+    setTab(tab);
+  };
 
   return (
     <Wrapper>
       <AuthWrapper>
         <TabContainer>
-          <Tab $active={tab === 'logIn'} onClick={() => setTab('logIn')}>
+          <Tab $active={tab === 'logIn'} onClick={() => toggleTab('logIn')}>
             로그인
           </Tab>
-          <Tab $active={tab === 'signUp'} onClick={() => setTab('signUp')}>
+          <Tab $active={tab === 'signUp'} onClick={() => toggleTab('signUp')}>
             회원가입
           </Tab>
         </TabContainer>
-        {tab === 'logIn' ? <LogIn /> : <SignUp />}
+        {tab === 'logIn' ? <LogIn /> : <SignUp onToggle={toggleTab} />}
       </AuthWrapper>
     </Wrapper>
   );

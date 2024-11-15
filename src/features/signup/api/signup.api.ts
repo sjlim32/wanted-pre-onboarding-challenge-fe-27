@@ -6,5 +6,8 @@ import { UserEntity } from '@/entities/user/user.model';
 export const useSignUp = () => {
   return useMutation({
     mutationFn: (user: UserEntity) => userAPI.signUp(user),
+    onSuccess: (res) => {
+      alert(res.message);
+    },
   });
 };

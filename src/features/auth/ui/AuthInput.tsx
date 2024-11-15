@@ -8,7 +8,7 @@ interface InputProps {
   children: React.ReactNode;
 }
 
-export function Input({ children }: InputProps) {
+export function AuthInput({ children }: InputProps) {
   return <div className="input-wrapper">{children}</div>;
 }
 
@@ -41,9 +41,9 @@ function Label({ text }: LabelProps) {
   return <label className="input-label">{text}</label>;
 }
 
-Input.Field = Field;
-Input.Error = Error;
-Input.Label = Label;
+AuthInput.Field = Field;
+AuthInput.Error = Error;
+AuthInput.Label = Label;
 
 const InputContainer = styled.input`
   width: 100%;

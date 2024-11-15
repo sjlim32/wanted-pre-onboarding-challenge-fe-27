@@ -2,12 +2,17 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
+import { AUTH_TAB } from '@/features/auth/model/auth.const';
 import { AuthForm, authSchema } from '@/features/auth/model/validation';
-import { Input } from '@/features/auth/ui/Input';
+import { AuthInput } from '@/features/auth/ui/AuthInput';
 import { useSignUp } from '@/features/signup/api/signup.api';
 import Button from '@/shared/ui/Button';
 
-export default function SignUp() {
+interface SignUpProps {
+  onToggle: (tab: AUTH_TAB) => void;
+}
+
+export default function SignUp({ onToggle }: SignUpProps) {
   const { mutate: signUp } = useSignUp();
   const {
     register,
@@ -19,19 +24,25 @@ export default function SignUp() {
 
   const onSubmit = (data: AuthForm) => {
     signUp(data);
+    onToggle('logIn');
   };
 
   return (
     <LogInWrapper>
       <FormContainer>
         <InputBox>
-          <Input.Field type="email" placeholder="Email" register={register} name="email" />
-          <Input.Error errors={errors} name="email" />
+          <AuthInput.Field type="email" placeholder="Email" register={register} name="email" />
+          <AuthInput.Error errors={errors} name="email" />
         </InputBox>
 
         <InputBox>
-          <Input.Field type="password" placeholder="Password" register={register} name="password" />
-          <Input.Error errors={errors} name="password" />
+          <AuthInput.Field
+            type="password"
+            placeholder="Password"
+            register={register}
+            name="password"
+          />
+          <AuthInput.Error errors={errors} name="password" />
         </InputBox>
       </FormContainer>
       <Button title="가입" onClick={handleSubmit(onSubmit)} size={2} />

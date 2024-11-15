@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
 import { AuthForm, authSchema } from '@/features/auth/model/validation';
-import { Input } from '@/features/auth/ui/Input';
+import { AuthInput } from '@/features/auth/ui/AuthInput';
 import { useLogIn } from '@/features/login/api/login.api';
 import Button from '@/shared/ui/Button';
 
@@ -26,13 +26,18 @@ export default function LogIn() {
     <LogInWrapper>
       <FormContainer>
         <InputBox>
-          <Input.Field type="email" placeholder="Email" register={register} name="email" />
-          <Input.Error errors={errors} name="email" />
+          <AuthInput.Field type="email" placeholder="Email" register={register} name="email" />
+          <AuthInput.Error errors={errors} name="email" />
         </InputBox>
 
         <InputBox>
-          <Input.Field type="password" placeholder="Password" register={register} name="password" />
-          <Input.Error errors={errors} name="password" />
+          <AuthInput.Field
+            type="password"
+            placeholder="Password"
+            register={register}
+            name="password"
+          />
+          <AuthInput.Error errors={errors} name="password" />
         </InputBox>
       </FormContainer>
       <Button title="로그인" onClick={handleSubmit(onSubmit)} size={2} />
