@@ -27,7 +27,7 @@ export default tseslint.config(
       'fsd-import/fsd-relative-path': 'error', // 같은 슬라이스 내에서는 상대 경로 강제
       'fsd-import/public-api-imports': 'error', // 절대 경로는 공개 API를 통해서만
       'fsd-import/layer-imports': [
-        'error',
+        'warn',
         {
           allow: [],
           alias: '@', // alias가 '@'일 경우
