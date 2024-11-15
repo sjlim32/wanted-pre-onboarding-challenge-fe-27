@@ -13,15 +13,3 @@ export default function Layout() {
     </RootLayout>
   );
 }
-
-// export default function RootLayout() {
-//   return (
-//     <div className="flex flex-col w-full min-h-screen ">
-//       <Header />
-//       <Navigation />
-//       <main className="flex p-8 grow ">
-//         <Outlet />
-//       </main>
-//     </div>
-//   );
-// }

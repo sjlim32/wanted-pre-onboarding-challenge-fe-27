@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-import useNavigator from '@/shared/lib/hooks/useNavigator';
-import Button from '@/shared/ui/Button';
+import HomeEnter from '@/features/auth/ui/HomeEnter';
 
 export default function HomePage() {
-  const navigateToAuth = useNavigator({ path: '/auth' });
-
   return (
     <HomeWrapper>
       <h1>투두 리스트</h1>
-      <Button title="로그인" onClick={navigateToAuth} size={2} />
+      <HomeEnter />
     </HomeWrapper>
   );
 }
